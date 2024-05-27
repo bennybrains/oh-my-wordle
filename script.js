@@ -181,10 +181,10 @@ async function init() {
 
   //winning animation
   async function winner(word) {
-    // Clear all the squares with a delay of 200ms between each clear
+    // Clear all the squares with a delay of 1500ms between each clear
     for (let i = 0; i < letters.length; i++) {
       if (letters[i].innerText !== "") {
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 150));
         letters[i].innerText = "";
         letters[i].classList.remove("close", "correct", "wrong", "typing");
       }
@@ -194,7 +194,7 @@ async function init() {
     const youPositions = [11, 12, 13];
     const youLetters = ["Y", "O", "U"];
     for (let i = 0; i < youPositions.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 150));
       const square = document.getElementById(`square${youPositions[i]}`);
       square.innerText = youLetters[i];
       square.classList.add("typing", "close"); // Adding 'close' class
@@ -204,7 +204,7 @@ async function init() {
     const winPositions = [16, 17, 18];
     const winLetters = ["W", "I", "N"];
     for (let i = 0; i < winPositions.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 150));
       const square = document.getElementById(`square${winPositions[i]}`);
       square.innerText = winLetters[i];
       square.classList.add("typing", "close");
@@ -213,7 +213,7 @@ async function init() {
     // Display the winning word in the last row
     const lastRowStartingIndex = letters.length - ANSWER_LENGTH;
     for (let i = 0; i < ANSWER_LENGTH; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 150));
       const square = letters[lastRowStartingIndex + i];
       square.innerText = word[i];
       square.classList.add("typing", "correct");
@@ -222,10 +222,10 @@ async function init() {
 
   //losing animation
   async function loser(word) {
-    // Clear all the squares with a delay of 200ms between each clear
+    // Clear all the squares with a delay of 150ms between each clear
     for (let i = 0; i < letters.length; i++) {
       if (letters[i].innerText !== "") {
-        await new Promise((resolve) => setTimeout(resolve, 200));
+        await new Promise((resolve) => setTimeout(resolve, 150));
         letters[i].innerText = "";
         letters[i].classList.remove("close", "correct", "wrong", "typing");
       }
@@ -235,7 +235,7 @@ async function init() {
     const youPositions = [11, 12, 13];
     const youLetters = ["Y", "O", "U"];
     for (let i = 0; i < youPositions.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 150));
       const square = document.getElementById(`square${youPositions[i]}`);
       square.innerText = youLetters[i];
       square.classList.add("typing", "wrong");
@@ -245,7 +245,7 @@ async function init() {
     const winPositions = [16, 17, 18, 19];
     const winLetters = ["L", "O", "S", "T"];
     for (let i = 0; i < winPositions.length; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 150));
       const square = document.getElementById(`square${winPositions[i]}`);
       square.innerText = winLetters[i];
       square.classList.add("typing", "wrong");
@@ -254,7 +254,7 @@ async function init() {
     // Display the winning word in the last row
     const lastRowStartingIndex = letters.length - ANSWER_LENGTH;
     for (let i = 0; i < ANSWER_LENGTH; i++) {
-      await new Promise((resolve) => setTimeout(resolve, 200));
+      await new Promise((resolve) => setTimeout(resolve, 150));
       const square = letters[lastRowStartingIndex + i];
       square.innerText = word[i];
       square.classList.add("typing", "correct");
